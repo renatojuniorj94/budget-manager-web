@@ -1,4 +1,4 @@
-function BudgetTable() {
+function BudgetTable({ budgetData }) {
     return (
         <table>
             <thead>
@@ -8,10 +8,11 @@ function BudgetTable() {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Alimentação</td>
-                    <td>500</td>
-                </tr>
+                {budgetData.map((item:{ categoria: string; quantidade: number }) => (
+                    <tr key={item.categoria}>
+                        <td>{item.categoria}</td>
+                    </tr>
+                ))}
             </tbody>
         </table>
     )
