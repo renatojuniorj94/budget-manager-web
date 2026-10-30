@@ -1,4 +1,4 @@
-function BudgetTable({ budgetData }) {
+function BudgetTable({ budgetData }: { budgetData: { categoria: string; quantidade: number }[] }) {
     return (
         <table>
             <thead>
